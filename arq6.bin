@@ -1,0 +1,38 @@
+3873832 dghdhshs 99999
+9991 olsac 321
+5991 nauj 654
+0991 epep 321
+8020 463258541 esoj
+3051 789654321 leibarg
+ 9011 987654321 nauj
+
+1 antoni 55.99 11
+3 antoni 55.99 11
+444 pepe 100 01
+555 june 32 12
+888 yorch 99 06
+1987 arioc 28 3
+1988 arioc 28 11
+1989 arioc 28 1
+123456 antoni 55.99 11
+
+
+with open(nombre) as archivo:
+    for i in archivo:
+        orden.append(int(i.split()[0]))
+    orden.sort()
+
+    with tempfile.TemporaryFile() as temporal:
+        for i in range(len(orden)):
+            archivo.seek(0)
+            for j in archivo:
+                if int(orden[i]) == int(j.split()[0]):
+                    dato = bytes(j, 'utf-8')
+                    temporal.write(dato)
+        temporal.seek(0)
+        with open(nombre, 'w') as f:
+            pass
+        with open(nombre, 'a') as archivo2:
+            for i in temporal:
+                j = i.decode()
+                archivo2.write(j)

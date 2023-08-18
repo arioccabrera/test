@@ -1,0 +1,4 @@
+francia                                 3
+madrid                                  2220
+lisboa                                  10000
+barcelona                               16
